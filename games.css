@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --primarycolor: #f44336;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eee;
+    text-transform: capitalize;
+}
+h1{
+    text-align: center;
+    margin: 0 0 50px 0;
+    padding: 20px;
+    background-color: white;
+}
+.guessgames{
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px auto;
+    text-align: center;
+    .gamearea{
+        .input{
+            > div{
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span{
+                    margin-right: 15px;
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+            }
+            .disabledinputs{
+                opacity: .5;
+                pointer-events: none;
+            }
+            input{
+                margin: 0 5px;
+                width: 60px;
+                height: 60px;
+                text-align: center;
+                font-size: 50px;
+                background: white;
+                border: none;
+                border-bottom: 3px solid #333;
+                caret-color: var(--primarycolor);
+                &:focus{
+                    outline-color: #ccc;
+                }
+                &.yesinplace{
+                    background-color: #f89e13;
+                    border: #f89e13;
+                    color: white;
+                }
+                &.notinplace{
+                    background-color: #18ba89;
+                    border: #18ba89;
+                    color: white;
+                }
+                &.no{
+                    background-color: #27303f;
+                    border: #27303f;
+                    color: white;
+                }
+            }
+            
+        }
+        .control{
+            display: flex;
+            gap: 10px;
+            .check{
+                flex: 1;
+                background-color: var(--primarycolor);
+            }
+            .hint{
+                background-color: #006988;
+            }
+            button{
+                border: none;
+                font-size: 25px;
+                padding: 15px 20px;
+                border-radius: 6px;
+                color: white;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            button:disabled{
+                background-color: black;
+                opacity: .4;
+                cursor: no-drop;
+            }
+        }
+        .message{
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            span{
+                font-weight: bold;
+                font-size: 35px;
+                color: var(--primarycolor);
+                display: block;
+                margin-top: 10px;
+            }
+            p{
+                color: brown;
+            }
+        }
+    }
+    .keycolors{
+        .keycolor{
+            padding: 15px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            text-align: center;
+            .key{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 10px;
+            &.inplace{
+                background-color: #f89e13;
+            }
+            &.notinplace{
+                background-color: #18ba89;
+            }
+            &.no{
+                background-color: #27303f;
+            }
+            }
+            .keytext{
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+    footer{
+        width: 100%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+    }
+}
